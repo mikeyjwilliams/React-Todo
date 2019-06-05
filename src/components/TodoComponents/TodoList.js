@@ -7,7 +7,7 @@ import Todo from './Todo';
 function TodoList() {
     return (
         <ul>
-            <Todo />
+          <li>{}</li>
         </ul>
     );
 }
