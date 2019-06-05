@@ -1,18 +1,14 @@
 import React from 'react';
 import './Todo.css';
 import TodoForm from './TodoForm';
+import TodoList from './TodoList';
 
-class Todo extends React.Component {
-    constructor() {
-        super();
-        
-    }
-    render() {
-        return (
-            <div>
-                <TodoForm />
-            </div>
-        );
-    }
+function Todo() {
+    return (
+        <div>
+            <TodoList />
+            <TodoForm /> 
+        </div>
+    );
 }
 export default Todo;
