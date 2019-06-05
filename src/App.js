@@ -7,8 +7,22 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      task: {
-        item: ""
+      todos: [
+        {
+          task: 'code',
+          id: Date.now(),
+          completed: false
+        },
+        {
+          task: 'be a boss',
+          id: Date.now(),
+          completed: true
+        }
+      ],
+      todo: {
+        task: '',
+        id: Date.now(),
+        completed: false
       }
     };
   }
@@ -18,7 +32,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoList />
+        <TodoList todos={this.state.todos}/>
         <TodoForm />
       </div>
     );
