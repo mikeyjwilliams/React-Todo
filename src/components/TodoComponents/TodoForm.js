@@ -10,7 +10,7 @@ const TodoForm = props => {
             name="task" 
             placeholder="...todo" 
             className="todo-input" 
-            onChange={props.handlesChanges} 
+            onChange={props.update} 
             value={props.name} 
             />
             <button type="button" className="add-todo">Add Todo</button>
