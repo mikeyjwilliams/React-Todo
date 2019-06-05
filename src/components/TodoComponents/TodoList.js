@@ -4,7 +4,7 @@ import React from 'react';
 import './Todo.css';
 import Todo from './Todo';
 
-function TodoList() {
+const TodoList = props => {
     return (
         <ul>
           <li>{}</li>
