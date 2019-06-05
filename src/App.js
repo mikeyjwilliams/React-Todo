@@ -25,13 +25,8 @@ class App extends React.Component {
       },
     };
   }
-  addTask = () => {
-    this.setState({
-      todo: {
-        ...this.state.todos,
-        task: 'be a coder',
-      },
-    });
+  handleUpdate = (event) => {
+   console.log(event.target.value);
   };
   
   // you will need a place to store your state in this component.
@@ -41,7 +36,7 @@ class App extends React.Component {
     return (
       <div>
         <TodoList todos={this.state.todos} />
-        <TodoForm onChange={this.addTask} />
+        <TodoForm update={this.handleUpdate} />
       </div>
     );
   }
