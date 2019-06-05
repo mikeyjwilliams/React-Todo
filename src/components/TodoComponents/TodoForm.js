@@ -2,6 +2,7 @@ import React from 'react';
 import './Todo.css';
 
 const TodoForm = props => {
+    console.log('props in TodoForm', props);
     return(
         <form>
             <input type="text" name="task" placeholder="...todo" className="todo-input" onChange=""/>
