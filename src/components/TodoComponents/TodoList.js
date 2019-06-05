@@ -7,7 +7,7 @@ import Todo from './Todo';
 const TodoList = props => {
     return (
         <ul>
-          <li>{}</li>
+          <li>hi</li>
         </ul>
     );
 }
