@@ -5,10 +5,13 @@ import './Todo.css';
 import Todo from './Todo';
 
 const TodoList = props => {
+    console.log('props in TodoList', props);
     return (
-        <ul>
-          <li>hi</li>
-        </ul>
+        <div>
+      {props.todos.map(todo => {
+            return <Todo task={todo.task}/>;
+          })}
+        </div>
     );
 }
 export default TodoList;
