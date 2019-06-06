@@ -5,17 +5,17 @@ import './Todo.css';
 import Todo from './Todo';
 
 const TodoList = props => {
-    console.log('props in TodoList', props);
     return (
         <div>
-      {props.todos.map(todo => {
-            return <Todo key={todo.date}
-             key={todo.id}
-             task={todo.task} 
-             toggleItem={props.toggleItem}
-
+      {props.todos.map( (todo) => {
+            return <Todo
+               key={todo.id} 
+               todo={todo} 
+               toggleItem={props.toggleItem}
               />
-          })}
+          }
+        )
+      }
         </div>
     );
 }
