@@ -53,7 +53,7 @@ class App extends React.Component {
     return (
       <div>
         <TodoList todos={this.state.todos} />
-        <TodoForm update={this.handleUpdate} handleClick={this.handleClick} />
+        <TodoForm handleUpdate={this.handleUpdate} handleClick={this.handleClick} />
       </div>
     );
   }
