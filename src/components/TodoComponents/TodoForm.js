@@ -1,27 +1,51 @@
 import React from 'react';
 import './Todo.css';
 
-const TodoForm = props => {
-    console.log('props in TodoForm', props);
-    return(
-        <form>
-            <input 
-                type="text"
-                name="task" 
-                placeholder="...todo" 
-                className="todo-input" 
-                onChange={props.handleUpdate} 
-                value={props.name} 
-            />
-            <button 
-                type="button" 
-                className="add-todo" 
-                onClick={props.handleClick} >
-                    Add Todo
-            </button>
+class TodoForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state= {
+            todo: ""
+        };
+    }
+    handleUpdate = event => {
+        this.setState({
+            todo: event.target.value
+        })  
+        console.log(event.target.value);
+    }
 
-            <button type="button" className="clear-completed">Clear Completed</button>
-        </form>
-    );
-};
+    submitTodo = event => {
+        event.preventDefault();
+        this.props.addTodos(this.state.todo);
+        this.setState({todo: ""});
+    }
+
+    render() {
+        return(
+            <form onSubmit={this.submitTodo}>
+                <input 
+                    type="text"
+                    name="todo" 
+                    placeholder="...todo" 
+                    className="todo-input" 
+                    onChange={this.handleUpdate} 
+                    value={this.state.task} 
+                />
+                <button 
+                    type="submit" 
+                    className="add-todo">
+                        Add Todo
+                </button>
+    
+                <button 
+                    type="button" 
+                    className="clear-completed" 
+                    onClick={this.props.deleteTask}>
+                        Clear Completed
+                </button>
+            </form>
+        );
+    }
+}   
 export default TodoForm;
