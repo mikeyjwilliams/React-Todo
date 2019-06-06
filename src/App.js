@@ -19,7 +19,7 @@ class App extends React.Component {
         },
       ],
       todo: {
-        task: 'mikey',
+        task: '',
         id: Date.now(),
         completed: false,
       },
@@ -41,6 +41,9 @@ class App extends React.Component {
     const newTodosList = this.state.todos;
     newTodosList.push(this.state.todo);
     console.log('newTodoList=> ', newTodosList);
+    this.setState ({
+      todos: newTodosList
+    });
   }
   
   // you will need a place to store your state in this component.
