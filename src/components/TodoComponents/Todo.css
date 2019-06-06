@@ -1,9 +1,7 @@
 
 .item.completed {
-    background-color: red;
     text-decoration: line-through;
 }
 .item {
-    background-color: white;
     text-decoration: none;
 }
