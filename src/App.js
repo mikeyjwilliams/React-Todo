@@ -27,8 +27,6 @@ class App extends React.Component {
   }
 
   handleUpdate = (event) => {
-   console.log('event.target.value=> ', event.target.value);
-   console.log('this.state.todo', this.state.todo);
    this.setState({
      todo: {
        ...this.state.todo,
