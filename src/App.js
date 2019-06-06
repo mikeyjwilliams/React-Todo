@@ -9,13 +9,13 @@ class App extends React.Component {
       todos: [
         {
           task: 'code',
-          id: Date.now(),
+          id: Date.now() + 1,
           completed: false,
         },
         {
           task: 'run outside',
-          id: Date.now(),
-          completed: true,
+          id: Date.now() + 2,
+          completed: false,
         },
       ],
       todo: {
@@ -43,6 +43,23 @@ class App extends React.Component {
       todos: newTodosList
     });
   }
+
+  toggleItem = id => {
+    console.log(id);
+    const newList = this.state.todos.map(item => {
+      if (item.id === id) {
+        const newObj = {
+          ...item,
+          completed: !item.purchased
+        };
+        return newObj;
+      } else {
+        return item;
+      }
+    });
+
+    this.setState({ todos: newList });
+  };
   
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -50,7 +67,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoList todos={this.state.todos} />
+        <TodoList todos={this.state.todos} toggleItem={this.toggleItem} />
         <TodoForm handleUpdate={this.handleUpdate} handleClick={this.handleClick} />
       </div>
     );
